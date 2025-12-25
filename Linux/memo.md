@@ -1,4 +1,4 @@
-#JavaSilver用メモ
+#Linuxメモ
 ##覚えた部分
 
 
