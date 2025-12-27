@@ -9,7 +9,7 @@ public class TenNumbers { //クラス宣言
 
         for (int i = 0; i < 10; i++) { //iを0から9まで繰り返す
             int val; //入力値を格納する変数の宣言
-            while (true) {　//breakするまで無限ループ
+            while (true) {//breakするまで無限ループ
                 System.out.print("項目 " + (i + 1) + " の値 (0-99): "); //項目 x の値 (0-99): を表示　0-99はマジックナンバーの為、MAX_VALUE等に置き換えると◎
                 String line = sc.nextLine().trim(); //nextLine()で文字列として1行取得し、trim()で前後の空白を削除。
                 try { //例外処理(一周)
