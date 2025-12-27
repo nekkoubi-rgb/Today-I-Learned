@@ -1,0 +1,12 @@
+# JavaSilver用メモ
+
+- ファイル名とclassは同じ(Main.java=Main)
+- **クラス名**、**パッケージ名**(ファイル名、フォルダ名)に[-]使用不可
+
+```
+public            公開
+static            静的
+void              戻り値無し
+main              javaのメソッドの1つ
+(String[] args)   引数(argsはただの変数名)
+```
