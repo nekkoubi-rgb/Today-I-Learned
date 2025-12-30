@@ -1,3 +1,5 @@
+package JavaSilver;
+
 public class AntigravityTest {
     public static void main(String[] args) {
         System.out.println("答えは:" + 10 + 20);
