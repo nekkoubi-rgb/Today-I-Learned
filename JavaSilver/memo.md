@@ -109,3 +109,53 @@ public class Main{
         System.out.println("悪い例");}
                 }
 ```
+
+# JavaSilver黒本用メモ
+
+
+#### Package
+- クラスを整理してる**ディレクトリ**  
+- ソースコードの**一番上**に書く  
+
+- ドメイン名の逆にするのが一般的  
+    - (google.com → com.google.xxx)  
+
+- フォルダ構造とパッケージ名は一致させる  
+    - (package **com.google.xxx**;  
+    → src/**com/google/xxx**/main.java)
+
+
+#### Class
+- オブジェクトを作る為の**役割の定義/設計図**  
+    - 属性(フィールド):そのオブジェクトが持っているデータ
+    - 操作(メソッド):そのオブジェクトが出来る事。振る舞い    
+
+```
+    //属性（フィールド）：データ = 社員
+    public class Employee {  
+    int id;        // 社員番号  
+    String name;   // 氏名  
+
+    //操作（メソッド）：振る舞い = 挨拶する
+        public void SayHello() {
+        System.out.println("私の社員番号は " + id + "、 
+        名 前は " + name + " です。");
+        }
+    }
+```
+
+- メンバ変数
+    - フィールド部で変数を宣言する。 **(メソッドの外)**
+    - オブジェクトがメモリ上に存在する間は値を保持  
+    int xxx;  (初期値0)  
+    String yyy;  (初期値null)  
+- ローカル変数
+    - メソッド内で変数を宣言する  
+    - メソッド実行中のみ保持する。一時的なデータ。  
+    **初期値を入れないとエラー**になる。
+
+- 完全修飾クラス名    (FQCN:Fully Qualified Class Name)  
+    - **パッケージ名を含む**、クラスの正式なフルネーム  
+    >java.util.xxx  
+    >java.lang.xxx
+    
