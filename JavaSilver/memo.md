@@ -1,24 +1,4 @@
 # Java関連メモ
-## VSCode関連
-最終的には合併しそう  
-
-先頭は**package パッケージ名(JavaSilver);**
-
-#### クラスブロック  
-```public class クラス名{}```
-
-- ファイル名=クラス名.java
-- 大文字アルファベット開始。
-
-#### メソッドブロック(メインブロック)  
-```public static void main(String[] args)```
-```
-public            公開  
-static            静的  
-void              戻り値無し  
-main              javaのメソッドの1つ  
-(String[] args)   引数(argsはただの変数名)  
-```
 
 
 - ファイル名とclassは同じ(Main.java=Main)  
@@ -38,10 +18,8 @@ main              javaのメソッドの1つ
 - クラスファイル(.class)
 
 ### 実行
-- **インタプリタ**(**バイトコード→マシンコード**に変換。
+- **インタプリタ**(**バイトコード→マシン語**に変換。
 **JVM(Java Virtual Machine)内蔵**)
-
-- マシンコード=CPUが解釈出来る
 
 >Javaコンパイラで出力したバイトコード(.classファイル)は、特定のCPUに依存しない中間コードの為、汎用性◎  
 **"Write Once,Run Anywhere"**
@@ -75,9 +53,11 @@ main              javaのメソッドの1つ
 数値を読みやすくする為に使用  
 先頭、末尾、記号前後にはNG  
 `int var = 1_000_000;`  
+
 ### 注意事項
+
 - 変数名  
-小文字で開始。2つ目の単語以降の頭文字を大文字
+**小文字**で開始。2つ目の単語以降の頭文字を大文字
 数字で始めるのはNG
 publicやclass等はJavaですべて使われてる為NG
 使える記号は「_」と「$」のみ  
@@ -113,9 +93,10 @@ public class Main{
 # JavaSilver黒本用メモ
 
 
-#### Package
+#### パッケージ
 - クラスを整理してる**ディレクトリ**  
 - ソースコードの**一番上**に書く  
+**package パッケージ名(JavaSilver);**
 
 - ドメイン名の逆にするのが一般的  
     - (google.com → com.google.xxx)  
@@ -125,11 +106,41 @@ public class Main{
     → src/**com/google/xxx**/main.java)
 
 
-#### Class
+#### クラスブロック
+`public class クラス名{}`
+
+- ファイル名=クラス名.java
+- 大文字アルファベット開始。  
 - オブジェクトを作る為の**役割の定義/設計図**  
     - 属性(フィールド):そのオブジェクトが持っているデータ
     - 操作(メソッド):そのオブジェクトが出来る事。振る舞い    
+    
+- 完全修飾クラス名    (FQCN:Fully Qualified Class Name)  
+    - **パッケージ名を含む**、クラスの正式なフルネーム  
+    >java.util.xxx  
+    >java.lang.xxx
+    
+- メンバ変数
+    - フィールド部で変数を宣言する。 **(メソッドの外)**
+    - オブジェクトがメモリ上に存在する間は値を保持  
+    int xxx;  (初期値0)  
+    String yyy;  (初期値null)  
 
+#### メソッドブロック(メインブロック)  
+```public static void main(String[] args)```
+```
+public            公開  
+static            静的。共有。  
+void              戻り値無し  
+main              javaのメソッドの1つ  
+(String[] args)   引数(argsはただの変数名)  
+```
+
+- ローカル変数
+    - メソッド内で変数を宣言する  
+    - メソッド実行中のみ保持する。一時的なデータ。  
+    **初期値を入れないとエラー**になる。
+    
 ```
     //属性（フィールド）：データ = 社員
     public class Employee {  
@@ -143,19 +154,3 @@ public class Main{
         }
     }
 ```
-
-- メンバ変数
-    - フィールド部で変数を宣言する。 **(メソッドの外)**
-    - オブジェクトがメモリ上に存在する間は値を保持  
-    int xxx;  (初期値0)  
-    String yyy;  (初期値null)  
-- ローカル変数
-    - メソッド内で変数を宣言する  
-    - メソッド実行中のみ保持する。一時的なデータ。  
-    **初期値を入れないとエラー**になる。
-
-- 完全修飾クラス名    (FQCN:Fully Qualified Class Name)  
-    - **パッケージ名を含む**、クラスの正式なフルネーム  
-    >java.util.xxx  
-    >java.lang.xxx
-    
