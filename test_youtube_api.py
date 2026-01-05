@@ -30,4 +30,26 @@ def test_api():
         print(f"エラーが発生しました: {e}")
 
 if __name__ == "__main__":
-    test_api()
+    # 確実に存在する動画ID（例：Rick Astley - Never Gonna Give You Up）
+    # または、今YouTubeで開いている動画の ?v= 以降の11文字を入力してください
+    target_id = input("テストしたい動画IDを入力（空押しでデフォルトIDを使用）: ") or 'dQw4w9WgXcQ'
+    
+    # 既存の test_api 関数を少し修正して引数を受け取れるようにするか、
+    # 直接 ID を指定して実行
+    try:
+        youtube = build('youtube', 'v3', developerKey=API_KEY)
+        request = youtube.videos().list(
+            part='snippet',
+            id=target_id
+        )
+        response = request.execute()
+
+        if response['items']:
+            snippet = response['items'][0]['snippet']
+            print(f"成功！")
+            print(f"タイトル: {snippet['title']}")
+            print(f"チャンネル: {snippet['channelTitle']}")
+        else:
+            print(f"エラー: ID '{target_id}' は見つかりませんでした。別のIDを試してください。")
+    except Exception as e:
+        print(f"実行エラー: {e}")
