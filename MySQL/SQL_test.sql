@@ -29,3 +29,5 @@ VALUES ('商品A', 'カテゴリA', 5000, 10);
 
 -- 2. データの確認（ここで「No data」が「1行のデータ」に変わる）
 SELECT * FROM products;
+
+SELECT * FROM training_db.products;
