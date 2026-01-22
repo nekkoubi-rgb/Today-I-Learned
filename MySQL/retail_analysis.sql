@@ -41,3 +41,6 @@ FROM stores s
 LEFT JOIN visit_logs v ON s.store_id = v.store_id
 WHERE v.visit_date BETWEEN '2026-01-01' AND '2026-01-31'
 GROUP BY s.store_id;
+
+-- 余計な条件を入れず、中身を全て見る
+SELECT * FROM stores;
